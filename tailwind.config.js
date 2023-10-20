@@ -32,6 +32,7 @@ module.exports = {
           500: '#23261E',
           450: 'hsla(83,12%,13%,0.4)',
         },
+        primary: "#ffffff"
       },
       gridTemplateRows: {
         // Simple 8 row grid
