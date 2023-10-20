@@ -1,29 +1,45 @@
-/** @type {import('tailwindcss').Config} */
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+  purge: [
+    './pages/*.js',
+    './pages/**/*.js',
+    './components/*.js',
+    './components/**/*.js',
   ],
   theme: {
+    boxShadow: {
+      DEFAULT: '#11130f 0px 14px 20px;',
+    },
+    maxWidth: {
+      'screen-2xl': '1440px',
+      'screen-xl': '1280px',
+      'screen-lg': '1024px',
+      'screen-md': '768px',
+      'screen-sm': '640px',
+    },
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
       colors: {
-        primary:"#FFE1E7",
-        secondary: "#BAC2C7",
-        tertiary: "#41516C",
-        placeholder: "#6D7080",
-        disabled: "#6D7080",
-        grey: "#A1B0CC",
-        error: "#E94949",
-        "semi-black": "#0F131C",
-        dark: "#030209",
+        'grey-chez': {
+          300: '#CBCFCD',
+          400: '#9BA19A',
+          500: '#8D8B8C',
+        },
+        brown: {
+          500: '#7E7464',
+        },
+        dark: {
+          500: '#23261E',
+          450: 'hsla(83,12%,13%,0.4)',
+        },
+      },
+      gridTemplateRows: {
+        // Simple 8 row grid
+
+        7: 'repeat(7, minmax(0, 1fr))',
       },
     },
   },
+  variants: {},
   plugins: [],
 };
